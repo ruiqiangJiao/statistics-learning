@@ -1,0 +1,29 @@
+--- 
+title: "统计学习"
+date: "`r Sys.Date()`"
+documentclass: ctexbook
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+colorlinks: yes
+lot: yes
+lof: yes
+geometry: [b5paper, tmargin=2.5cm, bmargin=2.5cm, lmargin=3.5cm, rmargin=2.5cm]
+site: bookdown::bookdown_site
+description: ""
+github-repo: ruiqiangJiao/statistics-learn
+#cover-image: images/cover.jpg
+---
+
+
+
+# 前言 {-}
+
+
+
+# 致谢 {-}
+
+
+
+
+
