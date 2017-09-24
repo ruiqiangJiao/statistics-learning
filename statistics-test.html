@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>统计学习</title>
+  <meta name="description" content="统计学习">
+  <meta name="generator" content="bookdown 0.5.1 and GitBook 2.6.7">
+
+  <meta property="og:title" content="统计学习" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="ruiqiangJiao/statistics-learn" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="统计学习" />
+  
+  
+  
+
+
+
+<meta name="date" content="2017-09-25">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="intro.html">
+<link rel="next" href="appendix.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">统计学习</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="" data-path="e887b4e8b0a2.html"><a href="e887b4e8b0a2.html"><i class="fa fa-check"></i>致谢</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 序言</a></li>
+<li class="chapter" data-level="2" data-path="statistics-test.html"><a href="statistics-test.html"><i class="fa fa-check"></i><b>2</b> 统计检验</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-test.html"><a href="statistics-test.html#section-2.1"><i class="fa fa-check"></i><b>2.1</b> 正态总体样本的分布</a></li>
+</ul></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>A</b> 附录1</a><ul>
+<li class="chapter" data-level="A.1" data-path="02-foo.html"><a href="#section-A.1"><i class="fa fa-check"></i><b>A.1</b> 三大抽样分布</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix.html"><a href="appendix.html#chi2-"><i class="fa fa-check"></i><b>A.1.1</b> <span class="math inline">\({\chi}^2\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix.html"><a href="appendix.html#t-"><i class="fa fa-check"></i><b>A.1.2</b> <span class="math inline">\(t\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix.html"><a href="appendix.html#f-"><i class="fa fa-check"></i><b>A.1.3</b> <span class="math inline">\(F\)</span> 分布</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">统计学习</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">统计学习</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistics_test" class="section level1">
+<h1><span class="header-section-number">第 2 章</span> 统计检验</h1>
+<div id="section-2.1" class="section level2">
+<h2><span class="header-section-number">2.1</span> 正态总体样本的分布</h2>
+<p>许多统计检验基于正态分布的假设，因此基于标准化的正态变量构造的三大抽样分布函数在实际中有广泛的应用。</p>
+
+<div class="theorem">
+<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>定理 2.1  </strong></span>设<span class="math inline">\(x_1 , x_2 , \cdots , x_n\)</span> 是来自正态分布 <span class="math inline">\(N \left( \mu , \sigma^2 \right)\)</span>的样本，其样本均值和样本方差分别为</p>
+<p><span class="math display">\[\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i {\textbf{和}} \quad s^2 = \frac{1}{n-1} \sum_{i=1}^{n} {\left( x_i - \bar{x} \right)}^2\]</span> 则有</p>
+<p><span class="math inline">\(\qquad\)</span> (1) <span class="math inline">\(\bar{x} \sim N \left( \mu , \sigma^2 / n \right)\)</span> ;</p>
+<p><span class="math inline">\(\qquad\)</span> (2) <span class="math inline">\(\bar{x}\)</span> 和 <span class="math inline">\(s^2\)</span> 相互独立;</p>
+<p><span class="math inline">\(\qquad\)</span> (3) <span class="math inline">\(\frac{(n - 1) s^2}{\sigma^2} \sim \chi^2 \left( n - 1 \right)\)</span>;</p>
+<span class="math inline">\(\qquad\)</span> (4) <span class="math inline">\(\frac{\bar{x} - \mu }{s / \sqrt{n}} \sim t(n-1)\)</span>.
+</div>
+
+
+<div class="proof">
+<p> <span class="proof"><em>证明. </em></span>  记 <span class="math inline">\({X = (x_1 , x_2 , \cdots , x_n)}^T\)</span>,则 <span class="math display">\[EX = \left[
+\begin{matrix}
+ \mu \\
+ \vdots \\
+ \mu \\
+\end{matrix}
+\right],
+Var \left( X \right) = \sigma^2 I\]</span></p>
+<p><span class="math inline">\((1)\)</span> 取一个 <span class="math inline">\(n\)</span> 维正交矩阵<span class="math inline">\(A\)</span>，其第一行的每一个元素均为<span class="math inline">\(1/ \sqrt{n}\)</span>,如 <span class="math display">\[A = \left[
+\begin{matrix}
+\frac{1}{\sqrt{n}} &amp; \frac{1}{\sqrt{n}} &amp; \frac{1}{\sqrt{n}} &amp; \cdots &amp; \frac{1}{\sqrt{n}} \\
+\frac{1}{\sqrt{2 \cdot 1}} &amp; - \frac{1}{\sqrt{2 \cdot 1}} &amp; 0 &amp; \cdots &amp; 0 \\
+\frac{1}{\sqrt{3 \cdot 2}} &amp; \frac{1}{\sqrt{3 \cdot 2}} &amp; - \frac{1}{\sqrt{3 \cdot 2}} &amp; \cdots &amp; 0 \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+\frac{1}{\sqrt{n \cdot (n-1)}} &amp; \frac{1}{\sqrt{n \cdot (n-1)}} &amp;
+\frac{1}{\sqrt{n \cdot (n-1)}} &amp; \cdots &amp; - \frac{1}{\sqrt{n \cdot (n-1)}}
+\end{matrix}
+\right]\]</span></p>
+<p>令<span class="math inline">\(Y = AX\)</span>，则有多维正态分布的性质知<span class="math inline">\(Y\)</span>仍然服从<span class="math inline">\(n\)</span>维正态分布，其均值和方差分别为</p>
+<p><span class="math display">\[EY = A \cdot EX = \left[ \begin{matrix} \sqrt{n} \mu \\
+0 \\ \vdots \\ 0 \end{matrix} \right]\]</span>,</p>
+<p><span class="math display">\[\begin{align}
+Var(Y)&amp;= A \cdot Var(X) \cdot A^{T} = A \cdot \sigma^2 I \cdot 
+A^{T}\\
+      &amp;=\sigma^2 AA^{T} =\sigma^2 I\\
+\end{align}\]</span></p>
+<p>因此 ，<span class="math inline">\(Y = (y_1 , y_2 , \cdots , y_n)^T\)</span> 的各个分量相互独立，且都服从正态分布，其方差均为<span class="math inline">\(\sigma^2\)</span> ,而均值并不完全相同，<span class="math inline">\(y_1\)</span>的均值为<span class="math inline">\(\sqrt{n} \mu\)</span> , <span class="math inline">\(y_2 , \cdots , y_n\)</span> 的均值为0.而<span class="math inline">\(\bar{x} = \frac{1}{\sqrt{n}} y_1\)</span> , 根据正态分布的性质，<span class="math inline">\(\bar{x}\)</span>服从正态分布，且其均值和方差分别为: <span class="math display">\[E(\bar{x}) = \frac{1}{\sqrt{n}} \cdot \sqrt{n}\mu=\mu\]</span> <span class="math display">\[Var(\bar{x}) = (\frac{1}{\sqrt{n}})^2 \sigma^2 = \frac{1}{n}\sigma^2 \]</span></p>
+<p><span class="math inline">\((2)\)</span> 由于<span class="math inline">\(\sum_{i=1}^n y_i^2 = Y^TY = X^TA^TAX=\sum_{i=1}^n x_i^2\)</span>，故而</p>
+<p><span class="math display">\[
+\begin{align}
+(n-1) \cdot s^2 &amp;= \sum_{i=2}^n (x_i - \bar{x})^2 = \sum_{i=1}^n x_i^2 - (\sqrt{n} \bar{x})^2 \\
+&amp; = \sum_{i=1}^n y_i^2 - y_1^2 = \sum_{i=2}^n y_i^2
+\end{align}
+\]</span> 因此，<span class="math inline">\(\bar{x}\)</span>与<span class="math inline">\(s^2\)</span>相互独立.</p>
+<p><span class="math inline">\((3)\)</span> 由于 <span class="math inline">\(y_2 , y_3 , \cdots , y_n\)</span>独立同分布正态分布<span class="math inline">\(N(0 , \sigma^2)\)</span> ,因此</p>
+<span class="math display">\[\begin{equation}
+\frac{(n-1) \cdot s^2}{\sigma^2} = \sum_{i = 2}^n (\frac{y_i}{\sigma})^2 \sim \chi^2 (n-1)
+\end{equation}\]</span>
+<p><span class="math inline">\((4)\)</span> 将结论<span class="math inline">\((4)\)</span>左端的式子改写成</p>
+<span class="math display" id="eq:musigmadistr">\[\begin{equation}
+\frac{\bar{x} - \mu}{s / \sqrt{n}} = \frac{\frac{\bar{x} - \mu}{\sigma / \sqrt{n}}}{\sqrt{\frac{(n-1) \cdot s^2 / \sigma^2}{n - 1}}}
+\tag{2.1}
+\end{equation}\]</span>
+<p>根据上面的结论<span class="math inline">\((1)\)</span>可知 , <span class="math inline">\(\frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \sim N (0 , 1)\)</span>,即<a href="statistics-test.html#eq:musigmadistr">(2.1)</a>中的分子为标准的正态分布，分母中根号下的式子，根据结论<span class="math inline">\((3)\)</span>为自由度是<span class="math inline">\(n-1\)</span>的<span class="math inline">\(\chi^2\)</span>分布除以它的自由度，且根据结论<span class="math inline">\((2)\)</span>知，分子与分母相互独立，根据<span class="math inline">\(t\)</span>分布的定义即证.</p>
+</div>
+
+<p>对结论<span class="math inline">\(\left( 1 \right)\)</span>做了一个简易的仿真模拟实验.如下所示:</p>
+<iframe src="https://jiaoruiqiang.shinyapps.io/normalmeandistribution/?showcase=0" width="777.6" height="400px">
+</iframe>
+
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="appendix.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ruiqiangJiao/statistics-learning/edit/master/02-foo.Rmd",
+"text": "缂栬緫"
+},
+"download": ["statistics_learning.pdf", "statistics_learning.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(script.src))
+      script.src  = script.src.replace(/^https?:/, '');
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
