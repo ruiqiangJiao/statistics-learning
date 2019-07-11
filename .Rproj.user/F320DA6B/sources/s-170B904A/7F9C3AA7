@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1562854113317.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1000178484",
+    "id" : "7F9C3AA7",
+    "lastKnownWriteTime" : 1562856131,
+    "last_content_update" : 1562856131765,
+    "path" : "E:/项目/statistics-learning/05-evaluateTwoClass.Rmd",
+    "project_path" : "05-evaluateTwoClass.Rmd",
+    "properties" : {
+        "cursorPosition" : "43,31",
+        "scrollLine" : "30"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

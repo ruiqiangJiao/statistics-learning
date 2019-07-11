@@ -1,0 +1,31 @@
+\cleardoublepage 
+
+# (APPENDIX) 附录 {-}
+
+# 附录1 {#appendix}
+
+## 三大抽样分布
+
+### ${\chi}^2$ 分布
+
+设 $X_1,X_2,\cdots,X_n \overset{i.i.d}{\sim} N \left( 0 , 1 \right)$，则 ${\chi}^2 = {X_1}^2 + {X_2}^2 + \cdots +{X_n}^2$ 的分布称为自由度为 $n$ 的 ${\chi}^2$ ，记为 ${\chi}^2 \sim  {\chi}^2 \left( n \right)$.
+
+
+### $t$ 分布
+
+设随机变量 $X_1$ 与 $X_2$ 独立且 $X_1 \sim N \left( 0 , 1  \right)$，$X_2 \sim {\chi}^2$，则称 $t = \frac{X_1}{\sqrt{{X_2}/{n}}}$ 的分布为自由度为 $n$ 的 $t$ 分布，记为 $t \sim t \left( n \right)$.
+
+- 自由度为 1 的 $t$ 分布为标准的柯西分布;
+
+- $n > 1$ ，$t$ 分布的数学期望存在且为0;
+
+- $n > 2$ , $t$ 分布的方差存在且为 $n/(n-2)$;
+
+- 自由度较大$( n \geq 30)$ 时，$t$ 分布可以用 $N \left(0 , 1 \right)$分布近似.
+
+
+### $F$ 分布
+
+设 $X_1 \sim \chi^2, X_2 \sim \chi^2$ 且 $X_1 , X_2$相互独立时，称
+$F = \frac{X_1/m}{X_2/n}$的分布是自由度为$m$ , $n$ 的 $F$ 分布, 记为 $F \sim F \left( m , n \right)$.
+

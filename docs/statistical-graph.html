@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>B 统计图形 | 统计学习</title>
+  <meta name="description" content="B 统计图形 | 统计学习" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="B 统计图形 | 统计学习" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="ruiqiangJiao/statistics-learn" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="B 统计图形 | 统计学习" />
+  
+  
+  
+
+
+
+<meta name="date" content="2019-07-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="appendix.html">
+<link rel="next" href="evaluateTwoClass.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">统计学习</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i>致谢</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 序言</a></li>
+<li class="chapter" data-level="2" data-path="statistics-test.html"><a href="statistics-test.html"><i class="fa fa-check"></i><b>2</b> 统计检验</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-test.html"><a href="statistics-test.html#section-2"><i class="fa fa-check"></i><b>2.1</b> 正态总体样本的分布</a></li>
+</ul></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>A</b> 附录1</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix.html"><a href="appendix.html#section-3"><i class="fa fa-check"></i><b>A.1</b> 三大抽样分布</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix.html"><a href="appendix.html#chi2-"><i class="fa fa-check"></i><b>A.1.1</b> <span class="math inline">\({\chi}^2\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix.html"><a href="appendix.html#t-"><i class="fa fa-check"></i><b>A.1.2</b> <span class="math inline">\(t\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix.html"><a href="appendix.html#f-"><i class="fa fa-check"></i><b>A.1.3</b> <span class="math inline">\(F\)</span> 分布</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="statistical-graph.html"><a href="statistical-graph.html"><i class="fa fa-check"></i><b>B</b> 统计图形</a></li>
+<li class="chapter" data-level="C" data-path="evaluateTwoClass.html"><a href="evaluateTwoClass.html"><i class="fa fa-check"></i><b>C</b> 衡量二分类的指标</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">统计学习</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">统计学习</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="statistical_graph" class="section level1">
+<h1><span class="header-section-number">B</span> 统计图形</h1>
+<ul>
+<li><p>直方图、条形图和饼图</p>
+<p>一般来说，直方图用于描述连续随机变量的分布状况，而条形图用于刻画离散随机变量的分布状况。饼图有一个全局的概念，在表达比例的时候比较常用。</p></li>
+<li><p>两个连续变量之间的相关关系</p>
+<p>关于两个连续变量之间的相关关系，可用散点图、回归分析和相关分析方法进行分析。</p>
+<ul>
+<li>相关分析</li>
+</ul>
+<p>皮尔逊相关系数主要用于定距变量，斯皮尔曼相关系数主要用于定序变量，而肯德尔相关系数主要用于定类变量。</p>
+<ul>
+<li>皮尔逊相关系数（正态分布）</li>
+</ul>
+<p><span class="math display">\[p_{xy} = \frac{\sum_{i=1}^{n} (x_i - \bar{x})(y_i  - \bar{y})}{\sqrt{\sum_{i=1}^{n}(x_i - \bar{x})^2 \sum_{i=1}^{n}(y_i - \bar{y})^2}}\]</span></p>
+<ul>
+<li>斯皮尔曼相关系数</li>
+</ul>
+<p>对原始的 <span class="math inline">\(x_i, y_i\)</span> 从大到小排序，记 <span class="math inline">\(x_i^{&#39;}, y_i^{&#39;}\)</span> 在原始排列中的位置，称 <span class="math inline">\(x_i^{&#39;}, y_i^{&#39;}\)</span> 为秩，<span class="math inline">\(d_i = x_i^{&#39;} - y_i^{&#39;}\)</span> 为秩差，则 Spearman 秩相关系数为：<span class="math display">\[1 - \frac{6* \sum\limits_{i=1}^n d^2}{n (n^2 - 1)}\]</span></p>
+<p>如果有重复数据，在计算秩时，取均值。</p>
+<ul>
+<li>肯德尔相关系数</li>
+</ul>
+<p><span class="math display">\[\tau_a = \frac{C - D}{\frac{1}{2} N (N -1)}\]</span></p>
+<p>其中 C 表示 XY 中拥有一致性的元素对数（两个元素为一对）；D 表示 XY 中拥有不一致性的元素对数。此公式仅适用于集合X与Y中均不存在相同元素的情况。</p>
+<p><span class="math display">\[\tau_b = \frac{C -D}{\sqrt{(N_3 - N_1)(N_3 - N_2)}}\]</span></p>
+<p>其中 <span class="math inline">\(N_3 = \frac{1}{2}N(N-1)\)</span>, <span class="math inline">\(N_1 = \sum\limits_{i=1}^s \frac{1}{2} U_i (U_i - 1)\)</span>,<span class="math inline">\(N_2 = \sum\limits_{i=1}^t \frac{1}{2} V_i (V_i - 1)\)</span>.</p>
+<p>将 <span class="math inline">\(X\)</span> 中的相同元素分别组合成小集合，<span class="math inline">\(s\)</span> 表示集合 <span class="math inline">\(X\)</span> 中拥有的小集合数（例如X包含元素：1 2 3 4 3 3 2，那么这里得到的 <span class="math inline">\(s\)</span> 则为2，因为只有2、3有相同元素），<span class="math inline">\(U_i\)</span> 表示第 <span class="math inline">\(i\)</span> 个小集合所包含的元素数。<span class="math inline">\(N_2\)</span> 在集合 <span class="math inline">\(Y\)</span> 的基础上计算而得。</p></li>
+<li><p>箱线图</p></li>
+<li><p>方差分析</p>
+<p>它是比较两个或多个因素效应大小，它的自变量为示性变量，表示某种效应的存在与否。</p></li>
+<li><p>Causs-Markov 假设</p>
+<ul>
+<li><p><span class="math inline">\(E(\epsilon) = 0\)</span>，这表明 <span class="math inline">\(y_i\)</span> 在其均值 <span class="math inline">\(\bar{y}\)</span> 附近 的波动完全是随机性的。</p></li>
+<li><p><span class="math inline">\(cov(\epsilon_i, \epsilon_j) = 0\)</span>，这表明不同次的观测值是不相关的。</p></li>
+<li><p><span class="math inline">\(var(\epsilon_i) = \sigma^2\)</span>，这表明 <span class="math inline">\(y_i\)</span> 在其均值附近 <span class="math inline">\(\bar{y}\)</span> 附近的波动程度是一样。</p></li>
+</ul></li>
+</ul>
+<p>估计回归参数最基本的方法是最小二乘法。</p>
+<ul>
+<li>Causs-Markov 定理表明对于线性回归模型中，在所有的线性无偏估计中，最小二乘估计是唯一具有最小方差的估计。</li>
+</ul>
+<p><span class="math display">\[RSS = Y^{&#39;}Y - \hat{\beta}X^{&#39;}Y\]</span></p>
+<pre><code>$RSS$，它的大小反映了实际数据与理论模型的偏离程度或者拟合程度。
+
+$R^2$，判定系数度量的是自变量对因变量的拟合程度，该值越大，表明自变量与因变量有较大的相依关系。</code></pre>
+<ul>
+<li><p>多重共线性</p>
+<p>回归自变量之间有近似的线性关系，即 <span class="math inline">\(c_1 x_1 + \cdots + c_p x_p = 0\)</span>.</p>
+<p>度量复共线性严重程度的一个重要的统计量为 <span class="math inline">\(k = \lambda_1 /\lambda p\)</span>.</p>
+<p>在线性回归中检测多重共线性，可以使用方差膨胀因子。</p></li>
+<li><p>异常值</p>
+<p>在统计学中，异常值是泛指在一组数据中，与它们主体不是来自同一个分布的那些少数的点。</p></li>
+<li><p>相关系数</p>
+<p>两个变量之间的关系可以分为独立和相依，在相依中又分为线性相依和非线性相依，相关系数度量的是线性相依关系。</p>
+<p>独立一定是不相关， 但是不相关不一定是独立。</p></li>
+<li><p>大数定理</p>
+<p>随机变量的均值渐进趋近于一个常数。</p></li>
+<li><p>中心极限定理</p>
+<p>表明随机变量的和渐进分布为正态分布。</p></li>
+<li><p>中位数和均值</p>
+<ul>
+<li><p>中位数存在，但均值不一定存在。</p></li>
+<li><p>高阶矩存在，低阶矩一定存在，但是低阶矩存在，高阶矩不一定存在。</p></li>
+<li><p>均值容易受到异常值的影响，但是中位数不易受到异常值的影响。</p></li>
+<li><p>中位数</p></li>
+</ul>
+<p>将随机变量的取值从小到大排序，中位数为排序中间的值。表示，大体上，比中位数大或者小的数据的个数为整个数据的一半。</p></li>
+<li><p>极差和半极差</p>
+<p>极差和半极差都是用来度量数据的分散性，半极差对于异常值比较稳健。</p></li>
+<li><p>经验分布</p>
+<p>对于连续性的随机变量可以用直方图来描述整体的分布情况。对于一般的随机变量，可以用经验分布函数来描述随机变量的分布情况。</p>
+<p><strong>经验分布函数</strong>的定义如下：</p>
+<p>设 <span class="math inline">\(X_1, \cdots, X_n\)</span> 为抽自总体 <span class="math inline">\(X\)</span> 的样本, <span class="math inline">\(X \sim F(x)\)</span>, 则称 <span class="math display">\[F_n(x) = \frac{1}{n} K(x)\]</span>, 其中 <span class="math inline">\(K(x)\)</span> 表示不小于 <span class="math inline">\(x\)</span> 的个数。</p>
+<p><strong>QQ 图</strong></p>
+<p>横坐标为分位数，纵坐标为随机变量的取值，如果 QQ 图是一条直线，那么检验可知随机变量服从正态分布。</p></li>
+<li><p>正态性检验</p></li>
+<li><p>分布拟合检验</p></li>
+<li><p>参数估计</p>
+<ul>
+<li><p>矩估计</p>
+<ul>
+<li><p>思想</p>
+<p>样本矩估计总体矩</p></li>
+</ul></li>
+<li><p>极大似然估计</p></li>
+</ul>
+<p>对于极大似然估计需要知道总体分布形式，计算相对复杂。</p>
+<ul>
+<li><p>估计量优良性准则</p>
+<ul>
+<li><p>相合性</p></li>
+<li><p>无偏性</p></li>
+<li><p>有效性</p></li>
+</ul></li>
+</ul>
+<p>树的模型对于预测变量不敏感，预测变量需要变化主要有一下几个方面：</p>
+<ul>
+<li><p>建模方法对预测变量有严格的要求</p>
+<p>预测变量有相同的标度</p></li>
+<li><p>数据的某些特征可能导致建模的困难</p>
+<p>判断数据有偏的黄金标准，如果最大值与最小值的比例超过20，认为该数据显著有偏。</p>
+<p>另外可以用偏度进行描述，</p>
+<p><span class="math display">\[偏度 = \frac{\sum (x - \bar{x})^3}{(n-1) v^{\frac{3}{2}}}\]</span></p>
+<p>其中，<span class="math inline">\(v = \frac{\sum(x_i - \bar{x})^2}{n-1}\)</span></p></li>
+<li><p>数据降维和特征提取</p></li>
+</ul>
+<p>PAC, 寻找若干原始预测变量的线性组合，它们捕捉最多预测变量的组合。之后的主成分和之前的主成分不相关。</p>
+<p>在进行主成分之前先判断是否有偏，对有偏的变量进行变换，然后对变量进行标准化和中心化。</p>
+<ul>
+<li><p>K 折交叉验证</p></li>
+<li><p>Boostrap 方法</p></li>
+</ul>
+<p>放回随机抽样，一些样本可能被抽取到多次， 但是一些样本一次也没有被抽取，这些一次也没有抽取到的样本，称为袋外样本，选中的样本被用于训练和建立模型，袋外样本被用于测试模型。</p>
+<ul>
+<li>632 法</li>
+</ul>
+<p><span class="math display">\[0.632*简单 Boostrap 估计错误率 + 0.368*显性错误率\]</span></p>
+<ul>
+<li><p>模型效果的定量度量</p>
+<ul>
+<li><p>均方根误差</p>
+<p>解释为观察值与预测值之间的平均距离。</p></li>
+<li><p>决定系数</p>
+<p>数据包含的信息中能被模型所解释的比例。</p></li>
+<li><p>MSE</p>
+<p>MSE = <span class="math inline">\(\sigma^2\)</span> + 偏差的平方 + 方差</p></li>
+</ul></li>
+<li><p>线性回归</p>
+<p>高度可解释性</p>
+<p><span class="math display">\[\hat{\beta} = (X^TX)^{-1}X^{T}y\]</span></p>
+<p><span class="math inline">\(X^TX\)</span> 可逆的条件：</p>
+<p>1）没有任何一个变量是其它变量的线性组合</p>
+<p>2）样本量的个数大于预测变量的个数。</p>
+<p>多元线性回归的第三个显著问题在于，它容易受那些远离主要数据总体趋势的点的影响。</p>
+<ul>
+<li><p>岭回归</p></li>
+<li><p>Lasso 回归</p></li>
+<li><p>弹性网</p></li>
+</ul>
+<p>稳健回归目标是在回归模型中最小化异常值的影响。</p></li>
+<li><p>KNN</p></li>
+<li><p>SVM</p>
+<p>基本思想：寻求能最大程度将训练数据分开的超平面，对于线性可分的训练数据集，这样的超平面有无群多个，需要找出最佳的分离超平面。最大程度不仅能够将正负样本划分开来，而且能够将距离超平面最近的样本以足够大的确信成都区分开来。`</p>
+<p>如何衡量最佳？</p>
+<ul>
+<li><p>一个是将训练数据点分类正确，给正负label各自划分到各自的类别中去；</p></li>
+<li><p>不仅将各自的label划分正确，而且还能够给出他们各自划分到各自的类别中的确信程度尽可能地大。</p></li>
+</ul>
+<p>为了满足上面的两个条件，引进了函数间隔，即 <span class="math inline">\(y(wx+b)\)</span>,具体表现如下：</p>
+<ul>
+<li><p><span class="math inline">\(y(wx+b)\)</span> 符号尽可能一致，描述的是上述条件1；</p></li>
+<li><p><span class="math inline">\(|wx+b|\)</span> 的距离尽可能地大，描述的是上述条件2。</p>
+<p>函数间隔与几何间隔</p>
+<p>训练数据中与分离超平面最近的实例称为支持向量。</p></li>
+<li><p>线性可分</p></li>
+</ul>
+<p><span class="math display">\[min_{w,b}\frac{1}{2}||w||^2 \]</span></p>
+<p><span class="math display">\[s.t. y_i(wx_i + b) - 1\geq 0 \]</span></p>
+<ul>
+<li><p>线性不可分（松弛变量）</p></li>
+<li><p>非线性可分</p>
+<p>核技巧，通过非线性变化将输入空间对应于特征空间</p></li>
+</ul></li>
+<li><p>Boosting</p>
+<p>强可学习：一个类中， 如果存在多项式 算法学习，并且学习的准确率较高，那么称这个算法为强学习器。反之，如果学习的准确率仅仅比随机猜测略好，那么这个算法称为弱学习器。</p></li>
+<li><p>adaBoost</p>
+<ul>
+<li><p>每一轮如何改变训练样本的权重</p>
+<p>提高上一轮训练错误的赝本的权重，降低训练正确样本的权重。</p></li>
+<li><p>如何将弱分类器组织成强分类器</p>
+<p>加权多数表决，加大分类错误率小的弱分类器的权重，使其在表决中起较大的作用。</p></li>
+</ul></li>
+<li><p>决策树</p>
+<p>结构：节点和有向边，节点又分为内部节点和叶子节点</p>
+<p>过程：特征选择、决策树生成、剪枝</p>
+<p>决策树模型的复杂度有叶子节点的个数以及以及叶子节点对应的 <span class="math inline">\(L^2\)</span> 范数决定。</p>
+<ul>
+<li><p>ID3</p>
+<p>在决策树各个节点上面基于信息增益选择特征， 递归地构建决策树。选择信息增益最大的特征以及划分阈值。</p></li>
+<li><p>G4.5</p>
+<p>穷举每一个 feature 的每一个阈值，找到使得 <span class="math inline">\(feature \geq x , feature &lt; x\)</span> 分成的两个分支的熵的 feature 以及阈值 <span class="math inline">\(x\)</span>,直到所有的样本有唯一的叶子节点对应或者满足终止条件为止。</p></li>
+<li><p>CART</p>
+<p>回归树用平方误差最小化构建二叉树，对分类树用基尼指数最小化准则。</p></li>
+</ul></li>
+<li><p>GBDT</p></li>
+<li><p>随机森林</p>
+<p>通过自助法重采样技术，从原始训练样本 <span class="math inline">\(N\)</span> 中有放回地重复抽样 <span class="math inline">\(k\)</span> 个样本生成新的训练集样本集合，然后根据自助采样集生成 <span class="math inline">\(k\)</span> 个决策树生成的随机森林。</p>
+<p>以决策树作为基学习器，另外在决策树的训练过程中引入了随机属性选择。传统决策树在选择划分属性时在当前节点属性集合中选择一个最优属性；而随机森林对每一个决策树的每一个节点，先从该节点的属性集合中随机选择一个包含 <span class="math inline">\(k\)</span> 个属性的子集，然后从这个子集中选择一个最优属性用于划分。</p></li>
+<li><p>位置参数和形状参数</p>
+<p>位置参数描述的是集中趋势，如均值和中位数。</p>
+<p>形状参数，确定分布函数的形状，正态分布中的标准差。</p></li>
+</ul></li>
+</ul>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="appendix.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="evaluateTwoClass.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ruiqiangJiao/statistics-learning/edit/master/04-statisticalGraph.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statistics_learning.pdf", "statistics_learning.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

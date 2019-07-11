@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561184234837.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "132867836",
+    "id" : "A9B000C",
+    "lastKnownWriteTime" : 1562854362,
+    "last_content_update" : 1562854362021,
+    "path" : "E:/项目/statistics-learning/04-statisticalGraph.Rmd",
+    "project_path" : "04-statisticalGraph.Rmd",
+    "properties" : {
+        "cursorPosition" : "39,0",
+        "scrollLine" : "36"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

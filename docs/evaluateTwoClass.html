@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>C 衡量二分类的指标 | 统计学习</title>
+  <meta name="description" content="C 衡量二分类的指标 | 统计学习" />
+  <meta name="generator" content="bookdown 0.11 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="C 衡量二分类的指标 | 统计学习" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="ruiqiangJiao/statistics-learn" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="C 衡量二分类的指标 | 统计学习" />
+  
+  
+  
+
+
+
+<meta name="date" content="2019-07-11" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="statistical-graph.html">
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="css\style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">统计学习</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>前言</a></li>
+<li class="chapter" data-level="" data-path="section-1.html"><a href="section-1.html"><i class="fa fa-check"></i>致谢</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> 序言</a></li>
+<li class="chapter" data-level="2" data-path="statistics-test.html"><a href="statistics-test.html"><i class="fa fa-check"></i><b>2</b> 统计检验</a><ul>
+<li class="chapter" data-level="2.1" data-path="statistics-test.html"><a href="statistics-test.html#section-2"><i class="fa fa-check"></i><b>2.1</b> 正态总体样本的分布</a></li>
+</ul></li>
+<li class="appendix"><span><b>附录</b></span></li>
+<li class="chapter" data-level="A" data-path="appendix.html"><a href="appendix.html"><i class="fa fa-check"></i><b>A</b> 附录1</a><ul>
+<li class="chapter" data-level="A.1" data-path="appendix.html"><a href="appendix.html#section-3"><i class="fa fa-check"></i><b>A.1</b> 三大抽样分布</a><ul>
+<li class="chapter" data-level="A.1.1" data-path="appendix.html"><a href="appendix.html#chi2-"><i class="fa fa-check"></i><b>A.1.1</b> <span class="math inline">\({\chi}^2\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.2" data-path="appendix.html"><a href="appendix.html#t-"><i class="fa fa-check"></i><b>A.1.2</b> <span class="math inline">\(t\)</span> 分布</a></li>
+<li class="chapter" data-level="A.1.3" data-path="appendix.html"><a href="appendix.html#f-"><i class="fa fa-check"></i><b>A.1.3</b> <span class="math inline">\(F\)</span> 分布</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="B" data-path="statistical-graph.html"><a href="statistical-graph.html"><i class="fa fa-check"></i><b>B</b> 统计图形</a></li>
+<li class="chapter" data-level="C" data-path="evaluateTwoClass.html"><a href="evaluateTwoClass.html"><i class="fa fa-check"></i><b>C</b> 衡量二分类的指标</a></li>
+<li class="divider"></li>
+<li><a href="https://bookdown.org" target="blank">统计学习</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">统计学习</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="evaluateTwoClass" class="section level1">
+<h1><span class="header-section-number">C</span> 衡量二分类的指标</h1>
+<ul>
+<li>混淆矩阵</li>
+</ul>
+<table class="kable_wrapper">
+<caption>
+<span id="tab:unnamed-chunk-1">表 C.1: </span>混淆矩阵以及相关统计量
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="left">classes</th>
+<th align="left">P</th>
+<th align="left">N</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">P</td>
+<td align="left">TP</td>
+<td align="left">FN</td>
+</tr>
+<tr class="even">
+<td align="left">N</td>
+<td align="left">FP</td>
+<td align="left">TN</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<thead>
+<tr class="header">
+<th align="left">统计量</th>
+<th align="left">计算方法</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">正确率</td>
+<td align="left">(TP + TN)/(TP + TN + FP + FN)</td>
+</tr>
+<tr class="even">
+<td align="left">错误率</td>
+<td align="left">(FP + FN)/(TP + TN + FP + FN)</td>
+</tr>
+<tr class="odd">
+<td align="left">准确率</td>
+<td align="left">TP/(TP + FP)</td>
+</tr>
+<tr class="even">
+<td align="left">召回率</td>
+<td align="left">TP/(TP + FN)</td>
+</tr>
+<tr class="odd">
+<td align="left">灵敏度</td>
+<td align="left">TP/(TP + FN)</td>
+</tr>
+<tr class="even">
+<td align="left">特异度</td>
+<td align="left">TN/(TN + FP)</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>FN</p>
+<p>假反例，表示漏诊的。</p></li>
+<li><p>FP</p>
+<p>假真例，表示误诊的。</p></li>
+<li><p>准确率</p>
+<p>准确率，又称为查准率，表示预测的正例中，真实的正例占比。</p></li>
+<li><p>召回率</p>
+<p>召回率，又称为查全率，表示真实的正例中，被准确预测的比率。</p></li>
+</ul>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="statistical-graph.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": true,
+"facebook": false,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/ruiqiangJiao/statistics-learning/edit/master/05-evaluateTwoClass.Rmd",
+"text": "编辑"
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["statistics_learning.pdf", "statistics_learning.epub"],
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

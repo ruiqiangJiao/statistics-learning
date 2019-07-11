@@ -1,0 +1,94 @@
+# 统计检验 {#statistics_test}
+
+##  正态总体样本的分布
+
+许多统计检验基于正态分布的假设，因此基于标准化的正态变量构造的三大抽样分布函数在实际中有广泛的应用。
+
+
+```{theorem}
+设$x_1 ,  x_2 , \cdots , x_n$ 是来自正态分布 $N \left( \mu , \sigma^2 \right)$的样本，其样本均值和样本方差分别为
+
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i {\textbf{和}} \quad s^2 = \frac{1}{n-1} \sum_{i=1}^{n} {\left( x_i - \bar{x} \right)}^2$$
+则有
+
+$\qquad$ (1) $\bar{x} \sim N \left( \mu , \sigma^2 / n \right)$ ;
+
+$\qquad$ (2) $\bar{x}$ 和 $s^2$ 相互独立;
+
+$\qquad$ (3) $\frac{(n - 1) s^2}{\sigma^2} \sim \chi^2 \left( n - 1 \right)$;
+
+$\qquad$ (4) $\frac{\bar{x} - \mu }{s / \sqrt{n}} \sim t(n-1)$.
+```
+
+```{proof}
+
+记 ${X = (x_1 , x_2 , \cdots , x_n)}^T$,则
+$$EX = \left[
+\begin{matrix}
+ \mu \\
+ \vdots \\
+ \mu \\
+\end{matrix}
+\right],
+Var \left( X \right) = \sigma^2 I$$
+
+$(1)$  取一个 $n$ 维正交矩阵$A$，其第一行的每一个元素均为$1/ \sqrt{n}$,如
+$$A = \left[
+\begin{matrix}
+\frac{1}{\sqrt{n}} & \frac{1}{\sqrt{n}} & \frac{1}{\sqrt{n}} & \cdots & \frac{1}{\sqrt{n}} \\
+\frac{1}{\sqrt{2 \cdot 1}} & - \frac{1}{\sqrt{2 \cdot 1}} & 0 & \cdots & 0 \\
+\frac{1}{\sqrt{3 \cdot 2}} & \frac{1}{\sqrt{3 \cdot 2}} & - \frac{1}{\sqrt{3 \cdot 2}} & \cdots & 0 \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+\frac{1}{\sqrt{n \cdot (n-1)}} & \frac{1}{\sqrt{n \cdot (n-1)}} &
+\frac{1}{\sqrt{n \cdot (n-1)}} & \cdots & - \frac{1}{\sqrt{n \cdot (n-1)}}
+\end{matrix}
+\right]$$
+
+令$Y = AX$，则有多维正态分布的性质知$Y$仍然服从$n$维正态分布，其均值和方差分别为
+
+$$EY = A \cdot EX = \left[ \begin{matrix} \sqrt{n} \mu \\
+0 \\ \vdots \\ 0 \end{matrix} \right]$$,
+
+$$\begin{align}
+Var(Y)&= A \cdot Var(X) \cdot A^{T} = A \cdot \sigma^2 I \cdot 
+A^{T}\\
+      &=\sigma^2 AA^{T} =\sigma^2 I\\
+\end{align}$$
+
+因此 ，$Y = (y_1 , y_2 , \cdots , y_n)^T$ 的各个分量相互独立，且都服从正态分布，其方差均为$\sigma^2$ ,而均值并不完全相同，$y_1$的均值为$\sqrt{n} \mu$ , $y_2 , \cdots , y_n$ 的均值为0.而$\bar{x} = \frac{1}{\sqrt{n}} y_1$ , 根据正态分布的性质，$\bar{x}$服从正态分布，且其均值和方差分别为:
+$$E(\bar{x}) = \frac{1}{\sqrt{n}} \cdot \sqrt{n}\mu=\mu$$
+$$Var(\bar{x}) = (\frac{1}{\sqrt{n}})^2 \sigma^2 = \frac{1}{n}\sigma^2 $$
+
+$(2)$  由于$\sum_{i=1}^n y_i^2 = Y^TY = X^TA^TAX=\sum_{i=1}^n x_i^2$，故而
+
+$$
+\begin{align}
+(n-1) \cdot s^2 &= \sum_{i=2}^n (x_i - \bar{x})^2 = \sum_{i=1}^n x_i^2 - (\sqrt{n} \bar{x})^2 \\
+& = \sum_{i=1}^n y_i^2 - y_1^2 = \sum_{i=2}^n y_i^2
+\end{align}
+$$
+因此，$\bar{x}$与$s^2$相互独立.
+
+$(3)$  由于 $y_2 , y_3 , \cdots , y_n$独立同分布正态分布$N(0 , \sigma^2)$ ,因此
+
+\begin{equation}
+\frac{(n-1) \cdot s^2}{\sigma^2} = \sum_{i = 2}^n (\frac{y_i}{\sigma})^2 \sim \chi^2 (n-1)
+\end{equation}
+
+$(4)$  将结论$(4)$左端的式子改写成
+  
+\begin{equation}
+\frac{\bar{x} - \mu}{s / \sqrt{n}} = \frac{\frac{\bar{x} - \mu}{\sigma / \sqrt{n}}}{\sqrt{\frac{(n-1) \cdot s^2 / \sigma^2}{n - 1}}}
+(\#eq:musigmadistr)
+\end{equation}
+
+根据上面的结论$(1)$可知 , $\frac{\bar{x} - \mu}{\sigma / \sqrt{n}} \sim N (0 , 1)$,即\@ref(eq:musigmadistr)中的分子为标准的正态分布，分母中根号下的式子，根据结论$(3)$为自由度是$n-1$的$\chi^2$分布除以它的自由度，且根据结论$(2)$知，分子与分母相互独立，根据$t$分布的定义即证.
+
+```
+
+
+对结论$\left( 1 \right)$做了一个简易的仿真模拟实验.如下所示:
+
+```{r , echo=FALSE ,fig.width= 8.1}
+knitr::include_app("https://jiaoruiqiang.shinyapps.io/normalmeandistribution/")
+```

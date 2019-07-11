@@ -1,0 +1,44 @@
+# 衡量二分类的指标 {#evaluateTwoClass}
+
+- 混淆矩阵
+
+```{r,echo=FALSE}
+df_confusion_matrix = data.frame(
+  'classes'= c('P','N'),
+  'P' = c('TP', 'FP'),
+  'N' = c('FN', 'TN')
+)
+
+df_statistical = data.frame(
+  '统计量' = c('正确率', '错误率','准确率', '召回率', '灵敏度', '特异度'),
+  '计算方法' = c('(TP + TN)/(TP + TN + FP + FN)',
+             '(FP + FN)/(TP + TN + FP + FN)',
+             'TP/(TP + FP)',
+             'TP/(TP + FN)',
+             'TP/(TP + FN)',
+             'TN/(TN + FP)')
+  )
+knitr::kable(
+  list(
+    head(df_confusion_matrix, 6),
+    head(df_statistical, 10)
+  ),
+  caption = '混淆矩阵以及相关统计量', booktabs = TRUE
+)
+```
+
+- FN 
+
+  假反例，表示漏诊的。
+  
+- FP
+
+  假真例，表示误诊的。
+  
+- 准确率
+   
+  准确率，又称为查准率，表示预测的正例中，真实的正例占比。
+  
+- 召回率
+
+  召回率，又称为查全率，表示真实的正例中，被准确预测的比率。

@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1561167669792.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2473240221",
+    "id" : "BAB6A05E",
+    "lastKnownWriteTime" : 1561165803,
+    "last_content_update" : 1561165803,
+    "path" : "E:/项目/statistics-learning/02-foo.Rmd",
+    "project_path" : "02-foo.Rmd",
+    "properties" : {
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
